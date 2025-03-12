@@ -4,7 +4,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     vec2 uv = fragCoord.xy / iResolution.xy;
 
     // Create seamless gradient animation
-    float speed = 0.2;
+    float speed = 0.1;
     float gradientFactor = (uv.x + uv.y) / 2.0;
 
     // Use smoothstep and multiple sin waves for smoother transition
@@ -13,9 +13,9 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
 
     // Create smooth circular animation
     float angle = iTime * speed;
-    vec3 color1 = vec3(0.1, 0.1, 0.5);
-    vec3 color2 = vec3(0.5, 0.1, 0.1);
-    vec3 color3 = vec3(0.1, 0.5, 0.1);
+    vec3 color1 = vec3(0.0, 0.0, 0.15);
+    vec3 color2 = vec3(0.15, 0.0, 0.0);
+    vec3 color3 = vec3(0.0, 0.0, 0.0);
 
     // Smooth interpolation between colors using multiple mix operations
     vec3 gradientStartColor = mix(
